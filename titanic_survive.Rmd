@@ -1,0 +1,49 @@
+
+---
+title: "Would have you survived the Titanic disaster?" 
+output: ioslides_presentation
+author: Luca valer
+date: March 17, 2017
+---
+
+## Overview
+
+We created a fun App that predicts the chance of surviving the Titanic disaster based on the paramaters you select. 
+
+Play and see what is yours probability based on your gender, age, the number of people you would have travelled with and the ticket class you would have purchased
+
+## How it does work
+
+In the background the system has already created a logistic regression (GLM - Binomial) which gives us an equation to use with the paramaters you passed. 
+
+`
+Afterwards we traslated the value we get into a probability score by using the following equation:
+
+exp(score)/(1+exp(score))
+
+## The Logistic regression  
+
+```{r load ,  cache=FALSE, results=FALSE,  comment="", warning=FALSE, error=FALSE, message=FALSE}
+library(dplyr)
+#get the data
+titanicdata<-read.csv("train.csv",stringsAsFactors = F)%>%	
+select(Survived,  Sex, SibSp,Age,Pclass) %>% 
+filter(!is.na(Age)) %>%  
+mutate( Sex = factor(Sex),Pclass = factor(Pclass)) 
+
+#fit the logistic model
+fit.titanicdata <- glm(Survived ~ . ,data = titanicdata, family = binomial)
+coef(fit.titanicdata) 
+```
+
+
+## The application  
+
+Here the links for both the application and the Github repo:
+
+- The application can be found in the following link
+<https://valerluca.shinyapps.io/Titanic_survive/>
+
+- The source code is hosted in the following link
+<https://github.com/valerluca/Titanic_survive>
+
