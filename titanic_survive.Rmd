@@ -1,0 +1,31 @@
+---
+title: "Would have you survived the Titanic disaster? A Shiny application"
+output: ioslides_presentation
+author: Luca valer
+date: March 17, 2017
+---
+
+
+
+## Overview
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+## Data loading and preprocessing
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## The application  
+
+- The application can be found in the following link
+- The source code is hosted in the following link
+
+
+## Slide with Plot
+
+sdfjslsdjl
+
